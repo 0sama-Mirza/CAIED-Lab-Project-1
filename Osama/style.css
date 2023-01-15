@@ -15,7 +15,8 @@ h1{
 .int{
     text-align: center;
     color: rgb(204, 185, 14);
-    font-size: 20px; 
+    font-size: 25px; 
+    margin-top: 40px;
 }
 .linx{
     /* text-align: center; */
