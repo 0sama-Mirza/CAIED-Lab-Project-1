@@ -53,9 +53,7 @@ h1{
     padding-left: 15px;
     padding-bottom: 15px;
 }
-#main{
-    color: rgb(0, 255, 0);
-}
+
 .linxmenu{
     width: 61%;
     margin-left: auto;
@@ -101,4 +99,23 @@ code {
 .menuitem{
     font-size: small;
     color: rgb(0, 255, 0);
+}
+#main{
+    color: white;
+    font-size: 22px;
+    text-align: start;
+    margin-top: -0.1px;
+}
+.maintopics{
+    padding-left: 20px;
+    max-height: 30px;
+    border: 1px solid tomato;
+    background-image: url(images/Backgrounds/num.gif);
+    margin-left: -2%;
+}
+/* .top-image{
+transition: all 0.1s ease;
+} */
+.top-image:hover{
+opacity: 0;
 }
