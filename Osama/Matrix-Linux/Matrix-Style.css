@@ -1,8 +1,22 @@
+html{
+    background-color: black;
+    overflow-x: hidden;
+    min-height: 100%;
+    position:relative;
+}
+
 body{
-    background-color: rgba(15, 15, 15, 0.993);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size:cover;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+canvas{
+    margin-top: -2%;
+    height: 100%;
+    resize: vertical;
+    position: absolute;
+    z-index: -1;
 }
 h1{
     /* color: rgb(182, 79, 10);  */
@@ -18,12 +32,7 @@ h1{
     font-size: 25px; 
     margin-top: 40px;
 }
-/* .linx{ */
-    /* text-align: center; */
-    /* color: rgb(204, 185, 14); */
-    /* font-size: 20px;  */
-/* } */
- 
+
 .flexposition{
     display: flex;
     justify-content: center;
@@ -34,48 +43,17 @@ h1{
     gap:20px;
 }
 
-.intro,.MainNoticeBoard{
+.MainNoticeBoard{
+    /* background-image: url(../images/Backgrounds/num.gif); */
+    background-color: black;
     width: 600px;
     max-width: 600px;
-    margin-top: 0.5%; 
+    margin-top: 0.5%;
+    /* margin-left: 10%;  */
     border-radius: 50px;
     border: 1px solid rgb(228, 89, 64);
     padding-left: 15px;
     padding-bottom: 15px;
-}
-
-.menu{
-    width: 20%;
-    flex-shrink: 0;
-    margin-top: 0.2%; 
-    border-radius: 50px;
-    border: 1px solid rgb(228, 89, 64);
-    padding-left: 15px;
-    padding-bottom: 15px;
-}
-
-.linxmenu{
-    width: 61%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.before{
-    color: whitesmoke;
-
-}
-p{
-    color:whitesmoke; 
-    font-size:medium;
-}
-li{
-    color: tomato;
-}
-
-.listhead{
-    font-size: larger;
-    font-style: italic;
-    color: rgb(224, 203, 8);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 code {
     font-family: Consolas,"courier new";
@@ -83,39 +61,58 @@ code {
     padding: 2px;
     font-size: 105%;
 }
+.menu{
+    background-color: black;
+    width: 20%;
+    flex-shrink: 0;
+    /* margin-left: 4%; */
+    margin-top: 0.2%; 
+    border-radius: 50px;
+    border: 1px solid rgb(228, 89, 64);
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
 
-.items{
-    color: tomato;
-    font-size:medium;
-    margin-top: -25px;
-}
-.keyboard{
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    display: block
-}
-.menuitem{
-    font-size: larger;
-    color: rgb(0, 255, 0);
-}
 .main{
     color: white;
     font-size: 22px;
     text-align: start;
     margin-top: -0.1px;
 }
+.linuxboxitems{
+    color: rgb(224, 203, 8);
+    font-size: 22px;
+    text-align: start;
+    margin-top: -0.1px;
+}
+
 .maintopics{
     padding-left: 20px;
     max-height: 30px;
     border: 1px solid tomato;
-    background-image: url(images/Backgrounds/num.gif);
+    background-image: url(../images/Backgrounds/num.gif);
     margin-left: -2.5%;
 }
-/* .top-image{
-transition: all 0.1s ease;
-} */
-.top-image:hover{
-opacity: 0;
+p{
+    color:whitesmoke; 
+    font-size:medium;
+}
+li,.lialt{
+    color: tomato;
+}
+span{
+    color: tomato;
+}
+.listhead{
+    font-size: larger;
+    font-style: italic;
+    color: rgb(224, 203, 8);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.menuitem{
+    font-size: larger;
+    color: rgb(0, 255, 13);
 }

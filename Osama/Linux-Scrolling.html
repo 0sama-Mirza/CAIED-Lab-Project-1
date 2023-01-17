@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/x-icon" href="images/icons/favicon-H.ico">
+	<link rel="stylesheet" href="Matrix-Linux/Matrix-Style.css">
+	<title>Osama Using GNU/Linux</title>
+</head>
+<body>
+    
+    <canvas id="Matrix"></canvas>
+    <script src="Matrix-Linux/Matrix-Script.js"></script>
+	<main>
+        
+		<h1>0sama's Website!</h1>
+		<div>
+			<img src="images/Backgrounds/GNU-vs.-GNULinux.png" alt="GNU/Linux" width="40%" style="margin-bottom: -9%; margin-left: 30%;object-fit:fill;">
+		</div>
+		<div class="flexposition">
+			<section>
+				<div class="MainNoticeBoard">
+                    <section>
+                        <h2 class="int">How To Enable Kinetic Scrolling In Chrome And Firefox.</h2>	
+                        <p>Kinetic Scrolling is enabled by default on Xrog Firefox but not on Chrome. I have only tried Chrome's Kinetic scrolling on Wayland, so I dont know if it works on Xorg.</p>
+                        
+                        <div class="maintopics">
+                            <h1 class="linuxboxitems">Firefox</h1>
+                        </div>
+                        <h2 class="main">For Xorg</h2>
+                        <ol>
+                            <li><p>Open Firefox and type following in the url:</p><p class="lialt">about:config</p></li>
+                            <li><p>Search </p><p class="lialt">apz. gtk. kinetic_scroll. enabled</p></li>
+                            <li><p>enable/disable it.</p></li>
+                        </ol>
+
+                        <h2 class="main">For Wayland</h2>
+                        <ol>
+                            <li><p>Open terminal and type:</p><p class="lialt">MOZ_ENABLE_WAYLAND=1 firefox</p></li>
+                            <li><p>Scroll some random pages you will realize that it has been enabled.</p></li>
+                            <li><p>To automatically set it open " bash.profile " and paste the following code:</p><pre><code class="items">
+if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+    export MOZ_ENABLE_WAYLAND=1
+fi
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+                            </pre></code></li>
+                            <li><p class="lialt">Save and restart!</p></li>
+                        </ol>
+
+                        <div class="maintopics">
+                            <h1 class="linuxboxitems">Chrome And Its Derivatives</h1>
+                        </div>
+                        <h2 class="main">For Wayland Only(I have not used chrome on Xorg)</h2>
+                        <p>Steps Are Almost The Same As Firefox.</p>
+                        <ol>
+                            <li><p>Open terminal and type:</p><p class="lialt">chromium --ozone-platform-hint=auto</p></li>
+                            <li><p>Just replace chromium to any other chrome derivative browser e.g:</p><p class="lialt">brave --ozone-platform-hint=auto</p></li>
+                            <li><p>To automatically set it go to <span>" /home/$User/.config "</span> and look for <span>"chromium-flags.conf"</span> file.</li>
+                            <li><p>If you cant find it then simply create a new file by its name. The name will change according to the application e.g <span>"brave-flags.conf"</span></p></li>
+                            <li><p>Paste the followinf code inside it:</p><pre><code class="items">
+# This line will be ignored.
+--ozone-platform-hint=auto
+                            </pre></code></li>
+                            <li><p class="lialt">Save and restart!</p></li>
+                        </ol>
+                        <div class="maintopics">
+                            <h1 class="linuxboxitems">PWA's And Web Applications.</h1>
+                        </div>
+                        <h2 class="main">If you have installed a PWA from chrominum then when you will click on its icon the wayland support wont turn on. To fix that follow the steps below:</h2>
+                        <ol>
+                            <li><p>go to <span>" /home/$User/.local/share/applications/ "</span> and look for anything that starts with <span>chromium/brave/chrome etc</span></p></li>
+                            <li><p>These files will have random names like <span>"brave-jdklklfpinionkgpmghaghehojplfjio-Default.desktop"</span> These are those individual PWA's</p></li>
+                            <li><p>Open every single one of them through a text editor.</p></li>
+                            <li><p>In the <span>"Exec="</span> part you will notice the name of the program is written alown with some flags. We only need to add the previous flag in it.</p></li>
+                            <li><p>Copy Paste and thats it! Here is how it will look:<br><br>
+                            <span>Exec=/usr/lib/brave-bin/brave --ozone-platform-hint=auto --profile-directory=Default --app-id=jdklklfpinionkgpmghaghehojplfjio</span></p></li>
+                        </ol>
+                        <div class="maintopics">
+                            <h1 class="linuxboxitems">Troubleshooting</h1>
+                        </div>
+                        <h2 class="main">Only For Brave Or Anyother whose run script is avaiable.</h2>
+                        <p>If chrome doesnt read that then you may have to go to 
+                        <ol>    
+                            <li><span>"/usr/bin"</span> and search for <span>brave/chrominum</span></p></li>
+                        <li><p>Paste the following inside the file after the definition of XDG_CONFIG_HOME:</p><pre><code class="items">
+# Allow users to override command-line options
+USER_FLAGS_FILE="$XDG_CONFIG_HOME/brave-flags.conf"
+if [[ -f $USER_FLAGS_FILE ]]; then
+   USER_FLAGS="$(cat $USER_FLAGS_FILE | sed 's/#.*//')"
+fi
+                        </pre></code></li>
+                        <li><p>Replace <span>"brave"</span> to your desired browser.</p></li>
+                        <li><p>Save , quit and restart!</p></li>
+                    </ol>
+                    <div class="maintopics">
+                        <h1 class="linuxboxitems">Still Doesnt Work?</h1>
+                    </div>
+                    <a  class="menuitem" href="https://www.reddit.com/r/pop_os/comments/lh3vnk/chrome_and_chromium_refuse_to_read/">This Might Help You Out!</a>
+                    </section>
+                </div>
+			</section>
+			<div class="menu">
+				<section>
+				<h3 class="listhead">Explore!</h3>
+					<ul>
+						<li><a class="menuitem" href="index.html">Home</a></li>
+						<li><a class="menuitem" href="University.html">University Stuff</a></li>
+						<li><a class="menuitem" href="helpfulresources.html">Helpful Resources</a></li>
+						<li><a class="menuitem" href="About-Linux.html">Me Using GNU/Linux</a></li>
+					</ul>
+			</section>
+			<section>
+				<h3 class="listhead">Interesting Stuff On The Internet</h3>
+				<ul>
+					<li><a class="menuitem" rel href="AIArt.html">Click Here To Check Out Some Awesome AI Art!</a></li>
+					<li>Cool Websites!
+						<ul>
+							<li><a class="menuitem" href="https://sadgrl.online/">SadGrl</a></li>
+							<li><a class="menuitem" href="https://links.yesterweb.org/">When The Internet Felt Exciting And Mysterious</a></li>
+							<li><a class="menuitem" href="https://adam.omg.lol/">OMG LOL</a></li>
+							<li><a class="menuitem" href="http://txti.es/">Simple Website Builder</a></li>
+							<li><a class="menuitem" href="https://wiby.me/">Better Google</a></li>
+							<li><a class="menuitem" href="https://asnan111.github.io/CAED-Lab-1/Asnan.html">The Best Website On This Planet!</a></li>
+							<li><a class="menuitem" href="https://www.anothersadtrombone.com/?gdpr=1">Click Here If You Accomplished Something Great!</a></li>
+							<li><a class="menuitem" href="https://www.szynalski.com/tone-generator/">Cool Wave Sounds</a></li>
+							<li><a class="menuitem" href="https://www.boredbutton.com/">Are You Bored? Click Here!</a></li>
+							<li><a class="menuitem" href="https://billsworld.neocities.org/">Time Travel To 1999!</a></li>
+							<li><a class="menuitem" href="https://pixels.crd.co/">Pixels</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	</main>
+<footer">
+    <hr color="green">
+      <p style="text-align: center;" 
+         onclick="alert('EMAILING ME IS USELESS');">
+         Email: osama.anees789@gmail.com
+      </p>
+	  <a href="http://motherfuckingwebsite.com/"><p style="text-align:center;color: chocolate;">Why Is My Website So Simple?</p></a>
+</footer>
+
+</body>
+
+</html>
