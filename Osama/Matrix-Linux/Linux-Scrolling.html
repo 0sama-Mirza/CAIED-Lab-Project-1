@@ -16,17 +16,16 @@
         
 		<h1>0sama's Website!</h1>
 		<div>
-			<img src="../images/Backgrounds/GNU-vs.-GNULinux.png" alt="GNU/Linux" width="40%" style="margin-bottom: -9%; margin-left: 30%;object-fit:fill;">
+			<img src="../images/Backgrounds/GNU-vs.-GNULinux.png" alt="GNU/Linux" style="width: 40%; margin-bottom: -9%; margin-left: 30%; object-fit: fill;">
 		</div>
 		<div class="flexposition">
-			<section>
 				<div class="MainNoticeBoard">
                     <section>
                         <h2 class="int">How To Enable Kinetic Scrolling In Chrome And Firefox.</h2>	
                         <p>Kinetic Scrolling is enabled by default on Xrog Firefox but not on Chrome. I have only tried Chrome's Kinetic scrolling on Wayland, so I dont know if it works on Xorg.</p>
                         
                         <div class="maintopics">
-                            <h1 class="linuxboxitems">Firefox</h1>
+                            <h2 class="linuxboxitems">Firefox</h2>
                         </div>
                         <h2 class="main">For Xorg</h2>
                         <ol>
@@ -44,28 +43,28 @@ if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
     export MOZ_ENABLE_WAYLAND=1
 fi
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-                            </pre></code></li>
+                            </code></pre></li>
                             <li><p class="lialt">Save and restart!</p></li>
                         </ol>
 
                         <div class="maintopics">
-                            <h1 class="linuxboxitems">Chrome And Its Derivatives</h1>
+                            <h2 class="linuxboxitems">Chrome And Its Derivatives</h2>
                         </div>
                         <h2 class="main">For Wayland Only(I have not used chrome on Xorg)</h2>
                         <p>Steps Are Almost The Same As Firefox.</p>
                         <ol>
                             <li><p>Open terminal and type:</p><p class="lialt">chromium --ozone-platform-hint=auto</p></li>
                             <li><p>Just replace chromium to any other chrome derivative browser e.g:</p><p class="lialt">brave --ozone-platform-hint=auto</p></li>
-                            <li><p>To automatically set it go to <span>" /home/$User/.config "</span> and look for <span>"chromium-flags.conf"</span> file.</li>
+                            <li><p>To automatically set it go to <span>" /home/$User/.config "</span> and look for <span>"chromium-flags.conf"</span> file.</p></li>
                             <li><p>If you cant find it then simply create a new file by its name. The name will change according to the application e.g <span>"brave-flags.conf"</span></p></li>
                             <li><p>Paste the following code inside it:</p><pre><code class="items">
 # This line will be ignored.
 --ozone-platform-hint=auto
-                            </pre></code></li>
+                            </code></pre></li>
                             <li><p class="lialt">Save and restart!</p></li>
                         </ol>
                         <div class="maintopics">
-                            <h1 class="linuxboxitems">PWA's And Web Applications.</h1>
+                            <h2 class="linuxboxitems">PWA's And Web Applications.</h2>
                         </div>
                         <h2 class="main">If you have installed a PWA from chrominum then when you will click on its icon the wayland support wont turn on. To fix that follow the steps below:</h2>
                         <ol>
@@ -77,29 +76,28 @@ fi
                             <span>Exec=/usr/lib/brave-bin/brave --ozone-platform-hint=auto --profile-directory=Default --app-id=jdklklfpinionkgpmghaghehojplfjio</span></p></li>
                         </ol>
                         <div class="maintopics">
-                            <h1 class="linuxboxitems">Troubleshooting</h1>
+                            <h2 class="linuxboxitems">Troubleshooting</h2>
                         </div>
                         <h2 class="main">Only For Brave Or Anyother whose run script is avaiable.</h2>
-                        <p>If chrome doesnt read that confi file then you may have to go to 
+                        <p>If chrome doesnt read that confi file then you may have to go to</p> 
                         <ol>    
-                            <li><span>"/usr/bin"</span><p> and search for </p><span>brave or chrominum</span></p></li>
+                            <li><span>"/usr/bin"</span><p> and search for </p><span>brave or chrominum</span></li>
                         <li><p>Paste the following inside the file after the definition of XDG_CONFIG_HOME:</p><pre><code class="items">
 # Allow users to override command-line options
 USER_FLAGS_FILE="$XDG_CONFIG_HOME/brave-flags.conf"
 if [[ -f $USER_FLAGS_FILE ]]; then
    USER_FLAGS="$(cat $USER_FLAGS_FILE | sed 's/#.*//')"
 fi
-                        </pre></code></li>
+                        </code></pre></li>
                         <li><p>Replace <span>"brave"</span> to your desired browser.</p></li>
                         <li><p>Save , quit and restart!</p></li>
-                    </ol>
-                    <div class="maintopics">
-                        <h1 class="linuxboxitems">Still Doesnt Work?</h1>
-                    </div>
-                    <a  class="menuitem" href="https://www.reddit.com/r/pop_os/comments/lh3vnk/chrome_and_chromium_refuse_to_read/">This Might Help You Out!</a>
+                        </ol>
+                        <div class="maintopics">
+                            <h2 class="linuxboxitems">Still Doesnt Work?</h2>
+                        </div>
+                        <a  class="menuitem" href="https://www.reddit.com/r/pop_os/comments/lh3vnk/chrome_and_chromium_refuse_to_read/">This Might Help You Out!</a>
                     </section>
                 </div>
-			</section>
 			<div class="menu">
 				<section>
 				<h3 class="listhead">Explore!</h3>
@@ -134,8 +132,8 @@ fi
 		</div>
 	</div>
 	</main>
-<footer">
-    <hr color="green">
+<footer>
+    <hr style="color:green">
       <p style="text-align: center;" 
          onclick="alert('EMAILING ME IS USELESS');">
          Email: osama.anees789@gmail.com
