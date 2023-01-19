@@ -18,7 +18,7 @@ canvas{
     position: absolute;
     z-index: -1;
 }
-h1{
+h1,.h1alt{
     /* color: rgb(182, 79, 10);  */
     color: rgb(228, 89, 64);
     font-size: 40px; 
