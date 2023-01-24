@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/x-icon" href="../images/icons/favicon-H.ico">
+	<link rel="stylesheet" href="Matrix-Style.css">
+	<title>Osama Using GNU/Linux</title>
+</head>
+<body>
+    <canvas id="Matrix"></canvas>
+    <script src="Matrix-Script.js"></script>
+	<main>
+		<h1>0sama's Website!</h1>
+		<div>
+			<img src="../images/Backgrounds/GNU-vs.-GNULinux.png" alt="GNU/Linux" style="width: 40%; margin-bottom: -9%; margin-left: 30%; object-fit: fill;">
+		</div>
+		<div class="flexposition">
+				<div class="MainNoticeBoard">
+                    <section>
+                        <h2 class="int">youtube-dl/yt-dlp</h2>	
+						<!-- This Block Makes That Horizontal Bar With That 101010 Animation -->
+						<p>For Complete Documentation Go <a href="https://github.com/yt-dlp/yt-dlp/blob/master/README.md">Here!</a></p>
+                        <div class="maintopics">
+                            <h2 class="linuxboxitems">Usefull Commands That I Found.</h2>
+                        </div>
+						<!-- The Animation Was Taken From SadGal online -->
+						<!-- https://sadgrl.online/webmastery/downloads/tiledbgs -->
+                        <ul>
+							<li style="list-style-image: url('../images/icons/Duck-TV.gif');"><p class="listhead" style="color: white;">For Downloading Seperate Chapters In A Video:</p>
+								<pre><code class="items">
+yt-dlp --embed-metadata --split-chapters $URL
+OR:
+yt-dlp --embed-chapters --split-chapters $URL
+								</code></pre>
+							</li>
+							<li style="list-style-image: url('../images/icons/Windows-TV.gif');"><p class="listhead" style="color: white;">Best Download Speed(Needs aria2 and yt-dlp maybe):</p>
+								<pre><code class="items">
+youtube-dl --external-downloader=aria2c 
+--external-downloader-args '--min-split-size=1M 
+--max-connection-per-server=16 
+--max-concurrent-downloads=16 --split=16' $URL
+								</code></pre>
+							(This is all in one line!)
+							</li>
+
+							<li style="list-style-image: url('../images/icons/Pink-TV.gif');"><p class="listhead" style="color: white;">For Extracting audio.:</p>
+								<pre><code class="items">
+youtube-dl --extract-audio --audio-format mp3 $URL
+								</code></pre>
+							</li>
+
+							<li style="list-style-image: url('../images/icons/Duck-TV.gif');"><p class="listhead" style="color: white;">For Adding Thimbnail and Metadata.:</p>
+								<pre><code class="items">
+yt-dlp --extract-audio --audio-format best --embed-thumbnail 
+--add-metadata $URL
+								</code></pre>
+							</li>
+
+							<li style="list-style-image: url('../images/icons/Windows-TV.gif');"><p class="listhead" style="color: white;">For extracting actual video url. The first one is the Video while the second one is the audio.:</p>
+								<pre><code class="items">
+youtube-dl -g
+								</code></pre>
+							</li>
+
+							<li style="list-style-image: url('../images/icons/Pink-TV.gif');"><p class="listhead" style="color: white;">Using ffmpeg to cut the video.:</p>
+								<pre><code class="items">
+ffmpeg -ss 08:51 -to 69:24 -i "(URL)" -ss 08:51 -to 69:24 -i "(URL) 
+-c copy -avoid_negative_ts make_zero nameofthefile.mp4
+								</code></pre>
+							</li>
+
+							<li style="list-style-image: url('../images/icons/Duck-TV.gif');"><p class="listhead" style="color: white;">For Downloading Thumbnail.:</p>
+								<pre><code class="items">
+youtube-dl --write-thumbnail --skip-download $URL
+								</code></pre>
+							</li>
+
+							<li style="list-style-image: url('../images/icons/Windows-TV.gif');"><p class="listhead" style="color: white;">For Mearging Audio and Video:</p>
+								<pre><code class="items">
+ffmpeg -i (Video Name).mp4 -i (Audio Name).mp3 -c:v -c:a 
+copy output.mp4
+								</code></pre>
+							</li>
+
+							<li style="list-style-image: url('../images/icons/Pink-TV.gif');"><p class="listhead" style="color: white;">Convert .webm into .mp4:</p>
+								<pre><code class="items">
+ffmpeg -i 1.webm -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" dsa.mp4
+								</code></pre>
+							</li>
+
+							<li style="list-style-image: url('../images/icons/Duck-TV.gif');"><p class="listhead" style="color: white;">Write Subtitles:</p>
+								<pre><code class="items">
+--write-subs 
+								</code></pre>
+							</li>
+						</ul>
+						
+                    </section>
+                </div>
+				<div class="menu">
+					<section>
+					<h3 class="listhead">Explore!</h3>
+					<ul>
+						<li style="list-style-type: '🏠 ';"><a class="menuitem" href="../index.html">Home</a></li>
+						<li style=" list-style-image: url('../images/icons/School-Bag-Book.gif');"><a class="menuitem" href="../University.html">University Stuff</a></li>
+						<li style="list-style-type: '📕 ';"><a class="menuitem" href="../helpfulresources.html">Helpful Resources</a></li>
+						<li style="list-style-type: '🐧 ';"><a class="menuitem" href="../About-Linux.html">Me Using GNU/Linux</a></li>
+					</ul>
+					
+				</section>
+				<section>
+					<h3 class="listhead">Interesting Stuff On The Internet</h3>
+					<ul>
+						<li><a class="menuitem" href="https://bugswriter.com/">BugsWriter</a></li>
+						<li><a class="menuitem" href="https://sadgrl.online/">SadGrl</a></li>
+						<li><a class="menuitem" href="https://links.yesterweb.org/">When The Internet Felt Exciting And Mysterious</a></li>
+						<li><a class="menuitem" href="https://adam.omg.lol/">OMG LOL</a></li>
+						<li><a class="menuitem" href="http://txti.es/">Simple Website Builder</a></li>
+						<li><a class="menuitem" href="https://wiby.me/">Better Google</a></li>
+						<li><a class="menuitem" href="https://asnan111.github.io/CAED-Lab-1/Asnan.html">The Best Website On This Planet!</a></li>
+						<li><a class="menuitem" href="https://www.anothersadtrombone.com/?gdpr=1">Click Here If You Accomplished Something Great!</a></li>
+						<li><a class="menuitem" href="https://www.szynalski.com/tone-generator/">Cool Wave Sounds</a></li>
+						<li><a class="menuitem" href="https://www.boredbutton.com/">Are You Bored? Click Here!</a></li>
+						<li><a class="menuitem" href="https://billsworld.neocities.org/">Time Travel To 1999!</a></li>
+						<li><a class="menuitem" href="https://pixels.crd.co/">Pixels</a></li>
+					</ul>
+				</section>
+			</div>
+	</div>
+	</main>
+<footer>
+    <hr style="color:green">
+      <p style="text-align: center;" 
+         onclick="alert('EMAILING ME IS USELESS');">
+         Email: osama.anees789@gmail.com
+      </p>
+	  <a href="http://motherfuckingwebsite.com/"><p style="text-align:center;color: chocolate;">Why Is My Website So Simple?</p></a>
+</footer>
+
+</body>
+
+</html>
