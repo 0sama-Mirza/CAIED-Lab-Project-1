@@ -9,11 +9,9 @@
 	<title>Osama Using GNU/Linux</title>
 </head>
 <body>
-    
     <canvas id="Matrix"></canvas>
     <script src="Matrix-Script.js"></script>
 	<main>
-        
 		<h1>0sama's Website!</h1>
 		<div>
 			<img src="../images/Backgrounds/GNU-vs.-GNULinux.png" alt="GNU/Linux" style="width: 40%; margin-bottom: -9%; margin-left: 30%; object-fit: fill;">
@@ -21,25 +19,29 @@
 		<div class="flexposition">
 				<div class="MainNoticeBoard">
                     <section>
-                        <h2 class="int">How To Automatically Change Wallpaper</h2>	
-                        <p>The following app will universally work. Doesnt matter if your on Gnome or KDE-Plasma.</p>
-                        <a class="menuitem" style="margin-left: 45%;" href="https://github.com/varietywalls/variety">Varity</a>
-                        
+                        <h2 class="int">Screen Recording On Gnome Wayland</h2>	
+						<p>We are going to use ffmpeg and another software to capture the screen and mic/computer's sound. ffmpeg will display us the video of the camera while the software will do all of the recording.</p>
+                        <!-- This Block Makes That Horizontal Bar With That 101010 Animation -->
                         <div class="maintopics">
-                            <h2 class="linuxboxitems">My Script To Change Wallpaper on Gnome</h2>
+                            <h2 class="linuxboxitems">Use Kooha</h2>
                         </div>
-                        <pre><code style="font-size: small;">
-#!/bin/bash
-wallpaperdir='/home/baymax/Pictures/wallpaper'
-while :
-do
-    pic=$(ls $wallpaperdir/* | shuf -n1)
-    gsettings set org.gnome.desktop.background picture-uri-dark "file://$pic"
-    pic=$(ls $wallpaperdir/* | shuf -n1)
-    gsettings set org.gnome.desktop.background picture-uri "file://$pic"
-    sleep 60
-done
-                            </code></pre>
+						<!-- The Animation Was Taken From SadGal online -->
+						<!-- https://sadgrl.online/webmastery/downloads/tiledbgs -->
+                        <p><a style="color: rgb(0, 255, 0);" href="https://github.com/SeaDve/Kooha#-it-doesnt-work">Click Here</a> To Download Kooha Screen Recorder Software Or Use The Followig Commands For Your Distro:</p>
+                        <ul>
+                            <li><p><a style="color: rgb(255, 255, 255);" href="https://archlinux.org/packages/community/x86_64/kooha/">Arch:</a></p>sudo pacman -S kooha</li>
+                            <li><p><a style="color: rgb(255, 255, 255);" href="https://flathub.org/apps/details/io.github.seadve.Kooha">Flatpak/Others:</a></p>flatpak install flathub io.github.seadve.Kooha</li>
+                        </ul>
+                        <div class="maintopics">
+                            <h2 class="linuxboxitems">ffmpeg</h2>
+                        </div>
+                        <p>Now To Capture The Camera Of Your Laptop Use The Followig Command:</p>
+                        <ul>
+                            <li>ffplay /dev/video0</li>
+                            <li><p>To make the stream better use this:</p>
+                            ffplay -fflags nobuffer -flags low_delay -vf "setpts=N/60/TB" -noframedrop /dev/video0</li>
+                        </ul>
+                        <p>Want To Know More? <a style="color: rgb(0, 255, 0);" href="https://www.reddit.com/r/obs/comments/krc606/low_latency_streaming_with_high_quality_using/">Click Here!</a></p>
                     </section>
                 </div>
 				<div class="menu">
